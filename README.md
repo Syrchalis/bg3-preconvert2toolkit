@@ -1,5 +1,5 @@
 # BG3 Pre-Converter
-Prepares legacy mods (created before Larian released the BG3 toolkit) for conversion with [Eclip5e's Toolkit Converter](https://github.com/Eclip5eLP/bg3-convert2toolkit)  
+Prepares legacy mods (created before Larian released the BG3 toolkit) for conversion with [Eclip5e's Toolkit Converter](https://github.com/Eclip5eLP/bg3-convert2toolkit).<br><br>
 
 ## Main Features
 
@@ -14,30 +14,40 @@ Prepares legacy mods (created before Larian released the BG3 toolkit) for conver
 
 In the `settings.json` additional features can be turned on. I recommend setting these all to true. Add a user prefix if you used one in your mod.
 
----
+<br>
 
-- `"userPrefix": ""`
+`"userPrefix": ""`
 
-Disabled if empty string. Otherwise tries to swap a set prefix with the spell prefix if both exist.<br><br>
-Example:<br>
-`"userPrefix": "USER"` `USER_Target_Spellname` → `Target_USER_Spellname`<br>
-`"userPrefix": ""` `USER_Target_Spellname` → `Target_USER_Target_Spellname`<br><br>
+- Disabled if empty string
+- Otherwise tries to swap a set prefix with the spell prefix if both exist
 
----
+Example:
 
-- `"replaceMismatchedSpellPrefixes": true`
-
-In case you named a spell `Shout_` but its spelltype is `"Target"` it will be renamed, since the converter/toolkit will not accept this mismatch.<br><br>
+- `"userPrefix": "USER"` `USER_Target_Spellname` → `Target_USER_Spellname`
+- `"userPrefix": ""` `USER_Target_Spellname` → `Target_USER_Target_Spellname`
 
 ---
 
-- `"convertStatusNamesUpperCase": true`
+<br>
 
-Convert status names into all uppercase, adhering to Larian naming conventions. Improves readability of your functors.<br><br>
+`"replaceMismatchedSpellPrefixes": true`
+
+- In case you named a spell `Shout_` but its spelltype is `"Target"` it will be renamed, since the converter/toolkit will not accept this mismatch.<br>
 
 ---
 
-- `"convertStatusCamelCaseToUnderscores": true`
+<br>
+
+`"convertStatusNamesUpperCase": true`
+
+- Convert status names into all uppercase, adhering to Larian naming conventions
+- Improves readability of your functors.<br>
+
+---
+
+<br>
+
+`"convertStatusCamelCaseToUnderscores": true`
 
 Only in combination with the above. If your statuses are written in camelCase they get (relatively) smartly converted to Larian's naming scheme. It will seperate numbers and upper/lower case, keep full uppercase words together and respect dice types (D4, D6, D8, D10, D12, D20, D100).<br><br>
 Example:<br>
