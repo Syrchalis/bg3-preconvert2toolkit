@@ -40,6 +40,7 @@ Convert status names into all uppercase, adhering to Larian naming conventions -
 - `"convertStatusCamelCaseToUnderscores": true`
 
 Only in combination with the above, if your statuses are written in camelCase they get (relatively) smartly converted to Larian's naming scheme for all uppercase names. So something like `BurningHotD4Technical2` will become `BURNING_HOT_D4_TECHNICAL_2` rather than `BURNINGHOTD4TECHNICAL2`. It will seperate numbers and upper/lower case, but will keep full uppercase words together as well as the dice types (D4, D6, D8, D10, D12, D20, D100).
+
 <br><br>
 
 ## Usage
@@ -48,8 +49,10 @@ Only in combination with the above, if your statuses are written in camelCase th
 - Make sure not to delete your settings.json or the script when deleting old files
 
 <br>
+
 I'm planning to change the usage to mirror [Eclip5e's Toolkit Converter](https://github.com/Eclip5eLP/bg3-convert2toolkit) for ease of use.
-<br><br>
+
+<br>
 
 ## Notes:
 - The script will output a report - it is important to review it. It will list problems, renames, number of changes/references and more.
