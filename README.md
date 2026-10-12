@@ -1,12 +1,16 @@
 # BG3 Pre-Converter
-Prepares legacy mods (created before Larian released the BG3 toolkit) for conversion with eclip5e's toolkit converter:
-https://github.com/Eclip5eLP/bg3-convert2toolkit
+Prepares legacy mods (created before Larian released the BG3 toolkit) for conversion with [Eclip5e's Toolkit Converter](https://github.com/Eclip5eLP/bg3-convert2toolkit)
+
+---
 
 Main Features:
 - Reads lose .txt files or entire mod folders
 - Sorts stat entries from mixed .txt files into the correct format for the converter/toolkit 
 - Adds spell prefixes (Shout_, Target_, etc.) when needed
 - Renames references to changed entries
+- Reports issues and what was changed
+
+---
 
 Bonus Features:
 In the settings.json additional features can be turned on.
@@ -19,8 +23,12 @@ Useful if you didn't follow Larian's naming convention and left your statuses lo
 - Convert camelCase to underscore seperation
 Only in combination with the above, if your statuses are written in camelCase they get (relatively) smartly converted to Larian's naming scheme for all uppercase names. So something like BurningHotD4Technical2 will become BURNING_HOT_D4_TECHNICAL_2 rather than BURNINGHOTD4TECHNICAL2.
 
+---
+
 Usage:
 - WIP (detects .txt files and mod folders next to it in the same folder)
+
+---
 
 Notes:
 - The script will output a report - it is important to review it. It will list problems, renames, number of changes/references and more
@@ -40,3 +48,7 @@ Entries that are not renamed (and whose references are not touched) but reported
     * the same name is used by entries of different types (case-sensitive),
     * the new name already exists as another entry,
     * two entries would end up with the same new name.
+
+---
+
+This script was mainly created with the help of Claude. It has been tested extensively by me converting many of my mods with heavily unsorted and sometimes error-prone stat files to the toolkit.
