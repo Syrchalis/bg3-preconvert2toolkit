@@ -1,6 +1,6 @@
 {
     "userPrefix": "",
-    "replaceMismatchedSpellPrefixes": false,
-    "convertStatusNamesUpperCase": false,
-    "convertStatusCamelCaseToUnderscores": false
+    "replaceMismatchedSpellPrefixes": true,
+    "convertStatusNamesUpperCase": true,
+    "convertStatusCamelCaseToUnderscores": true
 }
