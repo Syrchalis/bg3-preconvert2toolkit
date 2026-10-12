@@ -25,19 +25,19 @@ Example:<br>
 
 ---
 
-- `"replaceMismatchedSpellPrefixes": false`
+- `"replaceMismatchedSpellPrefixes": true`
 
 In case you named a spell `Shout_` but its spelltype is `"Target"` it will be renamed, since the converter/toolkit will not accept this mismatch.<br><br>
 
 ---
 
-- `"convertStatusNamesUpperCase": false`
+- `"convertStatusNamesUpperCase": true`
 
 Convert status names into all uppercase, adhering to Larian naming conventions - useful if you named your statuses lower-case. Converting them to upper case helps readability of your mod's code.<br><br>
 
 ---
 
-- `"convertStatusCamelCaseToUnderscores": false`
+- `"convertStatusCamelCaseToUnderscores": true`
 
 Only in combination with the above, if your statuses are written in camelCase they get (relatively) smartly converted to Larian's naming scheme for all uppercase names. So something like `BurningHotD4Technical2` will become `BURNING_HOT_D4_TECHNICAL_2` rather than `BURNINGHOTD4TECHNICAL2`. It will seperate numbers and upper/lower case, but will keep full uppercase words together as well as the dice types (D4, D6, D8, D10, D12, D20, D100).
 <br><br>
