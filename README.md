@@ -46,9 +46,11 @@ Only in combination with the above, if your statuses are written in camelCase th
 - Place a mod folder or loose .txt files next to the script
 - Output will be placed into a folder `convert` next to the script
 - Make sure not to delete your settings.json or the script when deleting old files
-<br><br>
+
+<br>
 I'm planning to change the usage to mirror [Eclip5e's Toolkit Converter](https://github.com/Eclip5eLP/bg3-convert2toolkit) for ease of use.
 <br><br>
+
 ## Notes:
 - The script will output a report - it is important to review it. It will list problems, renames, number of changes/references and more.
 - The script is case-sensitive and word wraps, so it will not confuse part of `"Target_Fireball_Trap"` with `"Target_Fireball"` or `"BLADEWARD"` with `"BladeWard"`.
@@ -64,10 +66,10 @@ I'm planning to change the usage to mirror [Eclip5e's Toolkit Converter](https:/
 | `Localization/<language>/` | Localization |
 
 Entries that are not renamed (and whose references are not touched) but reported:
-    * the same name is used by entries of different types (case-sensitive),
-    * the new name already exists as another entry,
-    * two entries would end up with the same new name.
+- the same name is used by entries of different types (case-sensitive),
+- the new name already exists as another entry,
+- two entries would end up with the same new name.
 
 ---
 
-This script was mainly created with the help of Claude. It has been tested extensively by me converting many of my mods with heavily unsorted and sometimes error-prone stat files to the toolkit.
+This script was mainly created with the help of Claude. It has been tested extensively by me converting many of my mods with heavily unsorted and sometimes error-prone stat files to the toolkit. Please feel free to create issues on GitHub to request features or report problems.
