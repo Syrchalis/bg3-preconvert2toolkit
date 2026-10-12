@@ -55,7 +55,7 @@ I'm planning to change the usage to mirror [Eclip5e's Toolkit Converter](https:/
 - The script will output a report - it is important to review it. It will list problems, renames, number of changes/references and more.
 - The script is case-sensitive and word wraps, so it will not confuse part of `"Target_Fireball_Trap"` with `"Target_Fireball"` or `"BLADEWARD"` with `"BladeWard"`.
 - The "icon" data line is ignored, since icons may have the same name and you may not wish to rename your images and atlas references.
-- Not all references are renamed, only those in commonly used files are. This is to prevent renaming in unwanted areas. These references are found and listed in the report however.
+- Not all references are renamed, only those in commonly used files are. This is to prevent renaming in unwanted areas. All references found that aren't changed are listed in the report however.
 
 | Location | What Is Targeted |
 | -------- | ------- |
