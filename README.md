@@ -76,7 +76,7 @@ Checks if used UUIDs are valid. This does not validate if they correspond to a s
 
 <br>
 
-I'm planning to change the usage to mirror [Eclip5e's Toolkit Converter](https://github.com/Eclip5eLP/bg3-convert2toolkit) for ease of use.
+I recommend not using this script in the same folder as [Eclip5e's Toolkit Converter](https://github.com/Eclip5eLP/bg3-convert2toolkit). Use two seperate folders and copy the output over.
 
 <br>
 
