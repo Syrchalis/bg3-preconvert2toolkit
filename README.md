@@ -6,8 +6,10 @@ Prepares legacy mods (created before Larian released the BG3 toolkit) for conver
 - Reads lose .txt files or entire mod folders
 - Sorts stat entries from mixed .txt files into the correct format for the converter/toolkit 
 - Adds spell prefixes (`Shout_`, `Target_`, etc.) when needed
+- Changes status names to Larian's naming convention if desired
 - Renames references to changed entries
-- Reports issues and what was changed
+- Outputs a `_Report.txt` with potential issues and what it changed
+- Outputs a `_MergedStatEntries.txt` to be used in [Norbyte's Stat Validator](https://bg3.norbyte.dev/stats-validator)
 <br><br>
 
 ## Bonus Features
@@ -53,12 +55,23 @@ Only in combination with the above. If your statuses are written in camelCase th
 Example:<br>
 `BurningHotD4Technical2` → `BURNING_HOT_D4_TECHNICAL_2` NOT `BURNINGHOTD4TECHNICAL2`
 
+---
+
+<br>
+
+`"checkUuids": true`
+
+Checks if used UUIDs are valid. This does not validate if they correspond to a specific version of UUID, just that their format is correct and only hexadecimal symbols are used. Malformed UUIDs can cause the toolkit to crash without an error.
 <br>
 
 ## Usage
-- Place a mod folder or loose .txt files next to the script
-- Output will be placed into a folder `convert` next to the script
-- Make sure not to delete your settings.json or the script when deleting old files
+- Place a mod folder or loose .txt files within the `convert` folder
+- Output will be placed into the `convert` folder, along with a `_Report.txt` and a `_MergedStatEntries.txt`
+- Input files will be moved out of `convert` and into a folder `Original_Input_Files` next to it
+- Read the report to learn of potential issues and as a log of what the script did
+- Copy the content of `_MergedStatEntries.txt` into [Norbyte's Stat Validator](https://bg3.norbyte.dev/stats-validator)
+- Fix any reported issues, as the toolkit will truncate your stat entries when it encounters an error
+- Make sure to delete old files before using the script again
 
 <br>
 
@@ -70,7 +83,9 @@ I'm planning to change the usage to mirror [Eclip5e's Toolkit Converter](https:/
 - The script will output a report - it is important to review it. It will list problems, renames, number of changes/references and more.
 - The script is case-sensitive and word wraps, so it will not confuse part of `"Target_Fireball_Trap"` with `"Target_Fireball"` or `"BLADEWARD"` with `"BladeWard"`.
 - The "icon" data line is ignored, since icons may have the same name and you may not wish to rename your images and atlas references.
+- Similarly "LevelMapValue" is ignored, as the referenced LevelMap may have the same name as one of your entries, this causes no issues for the toolkit or converter, while renaming them would break your LevelMap
 - Not all references are renamed, only those in commonly used files are. This is to prevent renaming in unwanted areas. All references found that aren't changed are listed in the report however.
+- The report is optimized a little to be viewed in [Visual Studio Code](https://code.visualstudio.com/) with the [BG3 syntax highlighting plugin](https://marketplace.visualstudio.com/items?itemName=chromosome16.bg3-text-support)
 
 | Location | What Is Targeted |
 | -------- | ------- |
@@ -84,6 +99,18 @@ Entries that are not renamed (and whose references are not touched) but reported
 - the same name is used by entries of different types (case-sensitive),
 - the new name already exists as another entry,
 - two entries would end up with the same new name.
+
+<br>
+
+## Bonus Script
+
+Use `ReplaceUUID.py` to replace a mods UUID after conversion with its original one.
+
+- Place `ReplaceUUID.py` inside the folder with [Eclip5e's Toolkit Converter](https://github.com/Eclip5eLP/bg3-convert2toolkit) (not inside the `convert` folder, but rather next to the `Convert2Toolkit.exe`)
+- Convert your mod with [Eclip5e's Toolkit Converter](https://github.com/Eclip5eLP/bg3-convert2toolkit)
+- Run `ReplaceUUID.py`
+- If there is a pair of folders inside `convert`, one named `<YourModName>` and one named `<YourModName>_UUID` the script will automatically grab the original UUID of your mod (from `<YourModName>/Mods/<YourModName>/meta.lsx`) and apply it across the converted mod
+- If run without a matching folder pair, the script will prompt you to provide a UUID
 
 ---
 
