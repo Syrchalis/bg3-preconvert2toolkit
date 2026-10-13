@@ -2,5 +2,6 @@
     "userPrefix": "",
     "replaceMismatchedSpellPrefixes": true,
     "convertStatusNamesUpperCase": true,
-    "convertStatusCamelCaseToUnderscores": true
+    "convertStatusCamelCaseToUnderscores": true,
+    "checkUuids": true
 }
