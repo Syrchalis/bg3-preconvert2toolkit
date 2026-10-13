@@ -62,6 +62,7 @@ Example:<br>
 `"checkUuids": true`
 
 Checks if used UUIDs are valid. This does not validate if they correspond to a specific version of UUID, just that their format is correct and only hexadecimal symbols are used. Malformed UUIDs can cause the toolkit to crash without an error.
+
 <br>
 
 ## Usage
